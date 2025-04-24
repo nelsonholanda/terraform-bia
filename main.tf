@@ -21,19 +21,19 @@ resource "aws_instance" "bia-dev" {
         ambiente = "dev"
         Name = var.instance_name
     } 
-    vpc_security_group_ids = [aws_security_group.bia_tf.id]
+    vpc_security_group_ids = [aws_security_group.bia_dev.id]
     root_block_device {
-        volume_size = 10
+        volume_size = 15
     }
 }
 
-resource "aws_security_group" "bia_tf" {
-  name        = "bia-tf"
+resource "aws_security_group" "bia_dev" {
+  name        = "bia-dev"
   description = "Acesso HTTP e HTTPS para o servidor"
   vpc_id      = "vpc-02375163489f89ac2"
 
   ingress {
-    description = "Entrada liberacao bia"
+    description = "Acesso HTTP e HTTPS para o servidor"
     from_port   = 3001
     to_port     = 3001
     protocol    = "tcp"

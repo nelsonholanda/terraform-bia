@@ -18,9 +18,9 @@ output instance_private_ip {
 
 output aws_security_group_id {
   description = "ID do grupo de segurança"
-  value       = aws_security_group.bia_tf.id
+  value       = aws_security_group.bia_dev.id
 }
 output aws_security_group_name {
   description = "Nome do grupo de segurança"
-  value       = aws_security_group.bia_tf.name
+  value       = aws_security_group.bia_dev.name
 }
