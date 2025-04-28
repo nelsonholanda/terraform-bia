@@ -41,7 +41,7 @@ sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
 
 #Adicionar swap
-sudo dd if=/dev/zero of=/swapfile bs=128M count=32
+sudo dd if=/dev/zero of=/swapfile bs=192M count=32
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
