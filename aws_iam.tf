@@ -29,3 +29,12 @@ resource "aws_iam_role" "role_acesso_ssm" {
   tags                  = {}
   tags_all              = {}
 }
+resource "aws_iam_role_policy_attachment" "attach_ssm_policy" {
+  role       = aws_iam_role.role_acesso_ssm.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+}
+
+resource "aws_iam_role_policy_attachment" "attach_admin_policy" {
+  role       = aws_iam_role.role_acesso_ssm.name
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+}

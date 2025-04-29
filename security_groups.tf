@@ -117,6 +117,14 @@ resource "aws_security_group" "bia_dev" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    description = "Acesso SSH IP Nelson"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["152.248.5.55/32"]
+  }
+
   egress {
     description = "Saida liberacao para tudo"
     from_port   = 0
