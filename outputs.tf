@@ -2,6 +2,10 @@ output instance_id {
   description = "ID da instância EC2"
   value       = aws_instance.bia-dev.id
 }
+#output rds_endpoint {
+#  description = "Endpoint do banco de dados RDS"
+#  value       = aws_db_instance.bia.endpoint
+#te}
 output instance_type    {
   description = "Tipo da instância EC2"
   value       = aws_instance.bia-dev.instance_type
@@ -23,4 +27,9 @@ output aws_security_group_id {
 output aws_security_group_name {
   description = "Nome do grupo de segurança"
   value       = aws_security_group.bia_dev.name
+}
+
+output rds_endpoint {
+  description = "Endpoint do banco de dados RDS"
+  value       = aws_db_instance.bia.endpoint
 }

@@ -16,7 +16,7 @@ provider "aws" {
 
 resource "aws_instance" "bia-dev" {
     ami = "ami-060a84cbcb5c14844"
-    instance_type = "t3.micro"
+    instance_type = "t3.medium"
     iam_instance_profile = aws_iam_instance_profile.role_acesso_ssm.name
     user_data = <<EOF
 #!/bin/bash
