@@ -37,7 +37,7 @@ resource "aws_security_group" "bia-alb" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = "vpc-02375163489f89ac2"
+  vpc_id                 = local.vpc_id
 }
 
 resource "aws_security_group" "bia-ec2" {
@@ -69,7 +69,7 @@ resource "aws_security_group" "bia-ec2" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = "vpc-02375163489f89ac2"
+  vpc_id                 = local.vpc_id
 }
 
 resource "aws_security_group" "bia-db" {
@@ -101,13 +101,13 @@ resource "aws_security_group" "bia-db" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = "vpc-02375163489f89ac2"
+  vpc_id                 = local.vpc_id
 }
 
 resource "aws_security_group" "bia_dev" {
   name        = "bia-dev"
   description = "Acesso HTTP e HTTPS para o servidor"
-  vpc_id      = "vpc-02375163489f89ac2"
+  vpc_id      = local.vpc_id
 
   ingress {
     description = "Acesso HTTP e HTTPS para o servidor"
