@@ -35,7 +35,7 @@ resource "aws_db_instance" "bia" {
   kms_key_id                            = "arn:aws:kms:us-east-2:194722426008:key/abad3cb3-9471-41de-a204-92ed80121aa1"
   license_model                         = "postgresql-license"
   maintenance_window                    = "sun:10:17-sun:10:47"
-  manage_master_user_password           = null
+  manage_master_user_password           = true
   master_user_secret_kms_key_id         = null
   max_allocated_storage                 = 0
   monitoring_interval                   = 0
