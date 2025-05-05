@@ -122,7 +122,7 @@ resource "aws_security_group" "bia_dev" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["152.248.5.55/32"]
+    cidr_blocks = ["177.134.149.114/32"]
   }
 
   egress {

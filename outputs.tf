@@ -30,6 +30,11 @@ output rds_endpoint {
   value       = aws_db_instance.bia.endpoint
 }
 
+output "instance_type_rds" {
+  description = "Tipo da instância RDS BIA"
+  value       = aws_db_instance.bia.instance_class
+}
+
 output rds_secrets {
   description = "Secrets do banco de dados RDS BIA" 
   value=tolist(aws_db_instance.bia.master_user_secret)[0].secret_arn

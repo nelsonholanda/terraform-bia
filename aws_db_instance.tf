@@ -3,7 +3,6 @@ resource "aws_db_instance" "bia" {
   allow_major_version_upgrade           = null
   apply_immediately                     = null
   auto_minor_version_upgrade            = true
-  availability_zone                     = "us-east-2b"
   backup_retention_period               = 0
   backup_target                         = "region"
   backup_window                         = "09:28-09:58"
@@ -30,7 +29,7 @@ resource "aws_db_instance" "bia" {
   iam_database_authentication_enabled   = false
   identifier                            = "bia"
   identifier_prefix                     = null
-  instance_class                        = "db.t3.micro"
+  instance_class                        = "db.t3.medium"
   iops                                  = 0
   kms_key_id                            = "arn:aws:kms:us-east-2:194722426008:key/abad3cb3-9471-41de-a204-92ed80121aa1"
   license_model                         = "postgresql-license"
@@ -66,4 +65,14 @@ resource "aws_db_instance" "bia" {
   upgrade_storage_config                = null
   username                              = "postgres"
   vpc_security_group_ids                = [aws_security_group.bia-db.id]
+  db_subnet_group_name                  = aws_db_subnet_group.terraform-bia-db.name
+}
+
+resource "aws_db_subnet_group" "terraform-bia-db" {
+  name       = "terraform-bia-db"
+  subnet_ids = [local.subnet_zona_a,local.subnet_zona_b,local.subnet_zona_c]
+  description = "Subnet GROUP Terraform BIA DB"
+  tags = {
+    Name = "Terraform BIA DB"
+  }
 }
