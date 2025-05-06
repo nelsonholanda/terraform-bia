@@ -7,6 +7,6 @@ resource "aws_ecr_repository" "bia" {
   image_tag_mutability = "MUTABLE"
   tags = {
     Name = "bia"
-    Environment = "dev"
+    Environment = "TF"
   }
 }
