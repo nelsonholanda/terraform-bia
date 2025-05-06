@@ -44,3 +44,8 @@ output bia_repo_url {
   description = "URL do repositório BIA"
   value = aws_ecr_repository.bia.repository_url
 }
+
+output "rds_secret_name" {
+  description = "Nome do segredo do banco de dados RDS BIA"
+  value       = data.aws_secretsmanager_secret.bia_db.name
+}
