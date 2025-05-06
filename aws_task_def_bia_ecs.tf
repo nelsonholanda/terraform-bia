@@ -1,13 +1,14 @@
 resource "aws_ecs_task_definition" "bia-ecs" {
   family                   = "task-def-bia"
   network_mode             = "bridge"
+  task_role_arn = aws_iam_role.ecs_task_role.arn
 
   container_definitions = jsonencode([
     {
       name         = "bia"
       image        = "${aws_ecr_repository.bia.repository_url}:latest"
       essential    = true
-      portMappings = [{ containerPort = 8080, hostPort = 0 }],
+      portMappings = [{ containerPort = 8080, hostPort = 80 }],
       memoryReservation = 400
       cpu          = 1024
       Environment = [ 
