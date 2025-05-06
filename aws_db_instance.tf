@@ -29,7 +29,7 @@ resource "aws_db_instance" "bia" {
   iam_database_authentication_enabled   = false
   identifier                            = "bia"
   identifier_prefix                     = null
-  instance_class                        = "db.t3.medium"
+  instance_class                        = "db.t3.micro"
   iops                                  = 0
   kms_key_id                            = "arn:aws:kms:us-east-2:194722426008:key/abad3cb3-9471-41de-a204-92ed80121aa1"
   license_model                         = "postgresql-license"

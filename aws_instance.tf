@@ -1,7 +1,7 @@
 
 resource "aws_instance" "bia-dev" {
     ami = "ami-060a84cbcb5c14844"
-    instance_type = "t3.medium"
+    instance_type = "t3.micro"
     iam_instance_profile = aws_iam_instance_profile.role_acesso_ssm.name
     user_data = "${file("userdata.sh")}"
     subnet_id = local.subnet_zona_c_public
