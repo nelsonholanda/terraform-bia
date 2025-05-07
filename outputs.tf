@@ -49,3 +49,8 @@ output "rds_secret_name" {
   description = "Nome do segredo do banco de dados RDS BIA"
   value       = data.aws_secretsmanager_secret.bia_db.name
 }
+
+output "alb_url" {
+  description = "URL do load balancer"
+  value       = aws_lb.bia.dns_name
+}
