@@ -63,7 +63,17 @@ resource "aws_security_group" "bia-ec2" {
     security_groups  = [aws_security_group.bia-alb.id]
     self             = false
     to_port          = 65535
-  }]
+  }, {
+    cidr_blocks      = ["0.0.0.0/0"]
+    description      = "ACESSO HTTP ECS"
+    from_port        = 80
+    ipv6_cidr_blocks = []
+    prefix_list_ids  = []
+    protocol         = "tcp"
+    security_groups  = []    
+    self             = false
+    to_port          = 80
+}]
   name                   = "bia-ec2"
   name_prefix            = null
   revoke_rules_on_delete = null
