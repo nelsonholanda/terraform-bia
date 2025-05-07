@@ -15,4 +15,8 @@ ordered_placement_strategy {
 }
  deployment_minimum_healthy_percent = 0
  deployment_maximum_percent = 100
+
+ lifecycle {
+    ignore_changes = [desired_count]
+  }
 }
