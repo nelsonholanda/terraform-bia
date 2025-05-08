@@ -9,7 +9,7 @@ resource "aws_launch_template" "ecs_ec2" {
   iam_instance_profile { arn = aws_iam_instance_profile.ecs_node.arn }
   monitoring { enabled = false }
   network_interfaces {
-    associate_public_ip_address = false
+    associate_public_ip_address = true
     security_groups             = [aws_security_group.bia-ec2.id]
   }
 
