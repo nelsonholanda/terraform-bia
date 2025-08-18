@@ -2,7 +2,7 @@ resource "aws_ecs_service" "bia" {
   name            = "service-bia"
   cluster         = aws_ecs_cluster.cluster-bia.id
   task_definition = aws_ecs_task_definition.bia-ecs.arn
-  desired_count   = 2
+  desired_count   = 1
 capacity_provider_strategy{
     capacity_provider = aws_ecs_capacity_provider.bia.name
     base = 1
